@@ -6,9 +6,7 @@ const outputEl = document.querySelector("#output");
 
 
 function calculateProfitAndLoss(initial,Quantity,current)
-{  
-    if(initial > 0 && Quantity > 0  && current>0)
-    {
+{ 
     
          if(current>initial)
          {
@@ -30,12 +28,7 @@ function calculateProfitAndLoss(initial,Quantity,current)
             showMessage(`no pain no gain and no gain no pain 😐😐😐😐😐`);
             outputEl.style.color="#4B5563";
         }
-    }
-    else{
-        outputEl.innerText ="please fill all the fields...";
-        // showMessage(`please fill all the fields...`);
-        outputEl.style.color="#B45309";   
-    }
+    
 
 }
 
@@ -52,8 +45,16 @@ ShowButton.addEventListener("click", () => {
         var Qty = Number(stockQty.value);
         var currpr =Number( currentPrice.value);
 
-
-    // calculateProfitAndLoss(Number(initialprice.value) , Number(stockQty.value), Number( currentPrice.value));
     
+    if((initialprice.value && stockQty.value && currentPrice.value)=== "")
+    {
+        outputEl.innerText ="please fill all the fields...";
+        // showMessage(`please fill all the fields...`);
+        outputEl.style.color="#B45309";   
+    }
+    else
+    {
+    // calculateProfitAndLoss(Number(initialprice.value) , Number(stockQty.value), Number( currentPrice.value));
      calculateProfitAndLoss(ip,Qty,currpr);
+    }
 });
