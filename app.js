@@ -5,7 +5,7 @@ const ShowButton = document.querySelector("#show-button");
 const outputEl = document.querySelector("#output");
 
 
-function calculateProfitAndLoss(initial,Quantity,current)
+const calculateProfitAndLoss = (initial,Quantity,current) =>
 { 
     
          if(current>initial)
@@ -33,7 +33,7 @@ function calculateProfitAndLoss(initial,Quantity,current)
 }
 
 
-function showMessage(message)
+const showMessage = (message) =>
 {
    outputEl.innerText = message;
 }
